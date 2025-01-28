@@ -9,8 +9,12 @@ export default {
   theme: {
     extend: {
       colors: {
-        background: "var(--background)",
-        foreground: "var(--foreground)",
+        azurePulse: "#3270fc",
+        background: '#f5f7fb',
+        oceandepth: '#144273',
+        dustyhorizon: '#878c9f',
+        cloudwhisper: '#f5f6fa',
+        duskylavender: '#888da0',
       },
     },
   },
