@@ -7,7 +7,7 @@ import Breadcrumb from './Breadcrumb';
 
 export default function BlogView({ blogInfo }: any) {
 
-  const { title_en: titleArticle, description_en: description, cover_image_url: CoverImage, related_articles: relatedArticles } = blogInfo;
+  const { title_en: titleArticle, description_en: description, cover_image_url: CoverImage, related_articles: relatedArticles } = blogInfo || {};
 
 
   const heroImage = '/wallpaper.png';
@@ -60,6 +60,7 @@ export default function BlogView({ blogInfo }: any) {
       </Layout>
 
       <RelatedBlog relatedArticles={relatedArticles} />
+
     </>
 
   );

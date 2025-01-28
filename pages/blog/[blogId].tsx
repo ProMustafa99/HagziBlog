@@ -1,5 +1,5 @@
 import Head from "next/head";
-import { getBlog } from "../_lib/getblog";
+import { getBlog } from "../../_lib/getblog";
 import { title } from "process";
 import BlogView from "../_components/BlogView";
 

@@ -1,5 +1,5 @@
 import BlogPostCard from '@/pages/_components/BlogPostCard';
-import { getBlogs } from './_lib/getblog';
+import { getBlogs } from '../_lib/getblog';
 import Layout from './_components/Layout';
 import Breadcrumb from './_components/Breadcrumb';
 import Pagenation from './_components/Pagenation';

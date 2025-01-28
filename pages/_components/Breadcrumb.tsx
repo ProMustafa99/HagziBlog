@@ -1,6 +1,6 @@
 import { usePathname } from 'next/navigation';
 import { useEffect, useState } from 'react';
-import { getBlog } from '../_lib/getblog';
+import { getBlog } from '../../_lib/getblog';
 import Link from 'next/link';
 
 interface BreadCrumb {
