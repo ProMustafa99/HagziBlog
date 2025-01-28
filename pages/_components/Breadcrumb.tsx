@@ -18,7 +18,7 @@ export default function Breadcrumb() {
         const newCrumbs: BreadCrumb[] = [{ title: 'Home', href: '/' }];
 
         pathSegments.forEach((segment, index) => {
-            const href = `${pathSegments.slice(0, index + 1)}`;
+            const href = `/${pathSegments.slice(0, index + 1)}`;
 
             if (index === 1) {
 
@@ -54,7 +54,7 @@ export default function Breadcrumb() {
                     {crumb.map((item, index) => (
                         <>
                             <li key={index} className='m-0'>
-                                <Link href={`/${item.href}`} className='last:text-oceandepth last:font-bold '>
+                                <Link href={`${item.href}`} className='last:text-oceandepth last:font-bold '>
                                     {item.title}
                                 </Link>
                                 {index < crumb.length - 1 && <span className="mx-2">/</span>}
