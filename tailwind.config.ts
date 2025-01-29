@@ -16,6 +16,7 @@ export default {
         dustyhorizon: '#878c9f',
         cloudwhisper: '#f5f6fa',
         duskylavender: '#888da0',
+        customblue: '#566985',
       },
     },
   },
