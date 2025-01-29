@@ -1,5 +1,5 @@
 import { useRouter } from 'next/router';
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 
 
 interface PagenationConfig {
@@ -14,16 +14,23 @@ export default function Pagenation({ totalCount, itemsPerPage, currentPage }: Pa
     const [page, setCurrentPage] = useState(currentPage || 1);
     const router = useRouter();
 
-
     function handlerNextPage(pageNumber: number) {
-
         setCurrentPage(pageNumber);
-
         router.push({
             pathname: router.pathname,
             query: { ...router.query, page: pageNumber },
         });
     }
+
+
+    useEffect(() => {
+        const { page } = router.query;
+        const pageNumber = Number(page);
+
+        if (pageNumber > Math.ceil(totalCount / itemsPerPage)) {
+            router.push('/404');
+        }
+    }, [router.query]);
 
     return (
         <div className="container mx-auto lg:max-w-screen-xl py-3  flex gap-2  justify-center">
