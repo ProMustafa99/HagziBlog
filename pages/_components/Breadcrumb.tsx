@@ -11,9 +11,9 @@ interface BreadcrumbProps {
 
 export default function Breadcrumb({ breadcrumbs }: BreadcrumbProps) {
     return (
-        <div className='bg-white shadow-md mustafa'>
+        <div className='bg-white shadow-md '>
             <nav className='container mx-auto w-full sm:max-w-screen-md lg:max-w-screen-md xl:max-w-screen-xl flex justify-between items-center py-5'>
-                <div className="container mx-auto px-4">
+                <div className="container mx-auto px-4 lg:px-0">
                     <ul className="flex space-x-2 text-sm">
                         {breadcrumbs.map((item, index) => (
                             <li key={index} className="m-0">

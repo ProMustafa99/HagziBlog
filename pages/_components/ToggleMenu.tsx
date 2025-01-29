@@ -15,7 +15,7 @@ export default function ToggleMenu() {
 
     return (
         <>
-            <button  className="sm:hidden fixed z-20 right-5 top-5 rounded w-12 h-11" onClick={() => setIsMobileMenuOpen((prev) => !prev)}>
+            <button  className="md:hidden fixed z-20 right-5 top-5 rounded w-12 h-11" onClick={() => setIsMobileMenuOpen((prev) => !prev)}>
 
                 <div className={`${isMobileMenuOpen ? "bg-white" : "bg-black"} -full h-1 transition-all duration-300 ${isMobileMenuOpen ? "transform rotate-45 translate-x-1 translate-y-4 " : ""} `}></div>
 

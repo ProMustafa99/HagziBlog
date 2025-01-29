@@ -12,7 +12,7 @@ export default function Menu() {
 
   return (
     <>
-      <nav className={`hidden sm:block w-[35%] relative ${jsosefin.className}`}>
+      <nav className={`hidden md:block w-[35%] md:w-[60%] relative ${jsosefin.className}`}>
         <ul className='flex flex-row justify-evenly h-full items-center'>
           <li className='text-azurePulse'>
             <Link href="#">Apartment</Link>
@@ -31,7 +31,7 @@ export default function Menu() {
           </li>
         </ul>
       </nav>
-      
+
       <ToggleMenu />
     </>
 

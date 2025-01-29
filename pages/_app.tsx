@@ -21,7 +21,7 @@ export default function App({ Component, pageProps }: AppProps) {
     
     <Header />
 
-    <main className={`bg-[#f5f7fb] h-max py-[90px]`} >
+    <main className={`bg-[#f5f7fb] h-max py-[79px]`} >
       <Component {...pageProps} />
     </main>
 
