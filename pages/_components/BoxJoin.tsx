@@ -18,7 +18,7 @@ export default function BoxJoin() {
 
       <div className='absolute bottom-10 px-7 font-bold'>
         <h5 className='w-60 text-lg  text-white my-5'> Do you want to join our real estate network? </h5>
-        <Link href="#" className='bg-azurePulse text-white py-3 px-5 rounded-lg text-sm'>
+        <Link href="#" className='bg-azurePulse text-white py-3 px-5 rounded-lg text-sm hover:bg-oceandepthHover transition-colors duration-3000'>
           Become an Agent
         </Link>
       </div>
