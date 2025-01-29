@@ -11,7 +11,7 @@ export default function CardRelated({ related }: any) {
   return (
     <article className='mb-11 '>
       <div className='relative py-32'>
-        <Image src="/test.png" fill className='rounded-t-lg ' alt={`Image/${title_en}`} />
+        <Image src={cover_image_url} fill className='rounded-t-lg ' alt={`Image/${title_en}`} />
       </div>
 
       <div className='bg-white p-4 rounded-b-lg'>
