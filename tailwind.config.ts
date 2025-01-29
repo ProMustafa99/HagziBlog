@@ -12,7 +12,7 @@ export default {
         azurePulse: "#3270fc",
         background: '#f5f7fb',
         oceandepth: '#144273',
-        oceandepthHover: '#0f3a61',
+        oceandepthHover: '#1A4E75',
         dustyhorizon: '#878c9f',
         cloudwhisper: '#f5f6fa',
         duskylavender: '#888da0',
