@@ -1,51 +1,61 @@
 import Head from "next/head";
 import { getBlog } from "../../_lib/getblog";
 import BlogView from "../_components/BlogView";
+import Breadcrumb from "../_components/Breadcrumb";
+
+interface BreadCrumb {
+    title: string;
+    href: string;
+}
 
 export async function getServerSideProps({ params }: any) {
+    let breadcrumbs: BreadCrumb[] = [{ title: "Home", href: "/" }];
+
+    if (!params.blogId) {
+        breadcrumbs.push({ title: "Blog", href: "/blog" });
+
+        return {
+            props: { blog: null, breadcrumbs },
+        };
+    }
     const blogId = params.blogId;
     const blogIdNumber = Number(blogId);
 
     if (isNaN(blogIdNumber) || blogIdNumber <= 0) {
-        return {
-            notFound: true,
-        };
+        return { notFound: true };
     }
 
     try {
-        const blog = await getBlog(blogId);
+        const blog = await getBlog(blogIdNumber);
 
-        if (blog === 'Article not found') {
-            return {
-                notFound: true,
-            };
+        if (!blog || blog === "Article not found") {
+            return { notFound: true };
         }
 
-        return {
-            props: { blog },
-        };
+        breadcrumbs.push(
+            { title: "Blog", href: "/blog" },
+            { title: blog.title_en, href: `/blog/${blogId}` }
+        );
 
-    } catch (error) {
         return {
-            notFound: true,
+            props: { blog, breadcrumbs },
         };
+    } catch (error) {
+        console.error("Error fetching blog:", error);
+        return { notFound: true };
     }
 }
 
-
-
-export default function Blog({ blog }: any) {
-
-    const { title_en } = blog;
-
+export default function Blog({ blog, breadcrumbs }: { blog: any; breadcrumbs: BreadCrumb[] }) {
     return (
         <>
             <Head>
-                <title> Blog {title_en}</title>
+                <title>{blog ? `Blog - ${blog.title_en}` : "Blog"}</title>
             </Head>
 
-            <BlogView blogInfo={blog} />
-        </>
+            
 
+            {blog ? <BlogView blogInfo={blog} breadcrumbs={breadcrumbs} /> : <h1 className="text-center text-2xl mt-10">Blog Page</h1>}
+        </>
     );
 }

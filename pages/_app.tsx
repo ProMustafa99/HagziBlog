@@ -11,15 +11,17 @@ const jsosefin = Josefin_Sans({
 });
 
 
+
 export default function App({ Component, pageProps }: AppProps) {
   return <>
 
     <Head>
       <title> Blog</title>
     </Head>
+    
     <Header />
 
-    <main className={`bg-[#f5f7fb] h-max`} >
+    <main className={`bg-[#f5f7fb] h-max py-[90px]`} >
       <Component {...pageProps} />
     </main>
 

@@ -6,12 +6,10 @@ import Breadcrumb from './Breadcrumb';
 import PhoneNumber from './PhoneNumber';
 
 export default function Header() {
-    const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
-    const [isDropdownOpen, setIsDropdownOpen] = useState(false);
 
     return (
         <>
-            <header className="bg-gray-50 border-b border-gray-200 relative ">
+            <header className="bg-gray-50 border-b border-gray-200 fixed w-full z-10">
                 <div className="container mx-auto w-full lg:max-w-screen-md xl:max-w-screen-xl  flex justify-between items-center py-5 px-4 sm:px-0 ">
                     <Logo />
                     <Menu />

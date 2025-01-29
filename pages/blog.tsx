@@ -5,33 +5,36 @@ import Breadcrumb from './_components/Breadcrumb';
 import Pagenation from './_components/Pagenation';
 import NothingFound from './_components/NothingFound';
 
+interface BreadCrumb {
+    title: string;
+    href: string;
+}
+
 export async function getServerSideProps({ query }: any) {
     const { search, page } = query;
     
-    // Modify getBlogs to only filter search results by title/content
     const blog = await getBlogs(search, page);
     
     if (!blog) {
-      return {
-        notFound: true,
-      };
+      return { notFound: true };
     }
+
+    const breadcrumbs = [
+        { title: "Home", href: "/" },
+        { title: "Blog", href: "/blog" }
+    ];
     
-    return { props: { blog } };
-  }
-  
-export default function blogs({ blog }: any) {
+    return { props: { blog, breadcrumbs } };
+}
 
-
-    const { searchResults, totalCount, currentPage ,itemsPerPage } = blog.data;
-    console.log(searchResults);
+export default function Blogs({ blog, breadcrumbs }: { blog: any; breadcrumbs: BreadCrumb[] }) {
+    const { searchResults, totalCount, currentPage, itemsPerPage } = blog.data;
 
     return (
         <>
-            <Breadcrumb />
+            <Breadcrumb breadcrumbs={breadcrumbs} />
 
             <Layout>
-
                 {totalCount > 0 ? (
                     searchResults.map((blog: any) => (
                         <BlogPostCard key={blog.id} searchResults={blog} />
@@ -44,9 +47,6 @@ export default function blogs({ blog }: any) {
 
                 <Pagenation totalCount={totalCount} itemsPerPage={itemsPerPage} currentPage={currentPage} />
             </Layout>
-
-
         </>
     );
 }
-

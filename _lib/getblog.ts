@@ -18,7 +18,7 @@ interface BlogData {
 
 export async function getBlogs(search:string="", page:number=1) {
   
-  const res = await fetch(`https://7e17-82-212-85-210.ngrok-free.app/blog-articles?search_term=${search}&page=${page}`);
+  const res = await fetch(` http://localhost:3000/blog-articles?search_term=${search}&page=${page}`);
 
   if (!res.ok) {
     throw new Error(`Failed to fetch blog data: ${res.statusText}`);
@@ -33,10 +33,8 @@ export async function getBlogs(search:string="", page:number=1) {
   return data;
 }
 
-
 export async function getBlog(id: number) {
-
-  const res = await fetch(`https://7e17-82-212-85-210.ngrok-free.app/blog-articles/${id}`);
+  const res = await fetch(`http://localhost:3000/blog-articles/${id}`);
   const blog = await res.json();
 
   if (!blog) {

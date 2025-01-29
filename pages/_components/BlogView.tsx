@@ -5,7 +5,7 @@ import RelatedBlog from './RelatedList';
 import Spinner from './Spinner';
 import Breadcrumb from './Breadcrumb';
 
-export default function BlogView({ blogInfo }: any) {
+export default function BlogView({ blogInfo , breadcrumbs}: any) {
 
   const { title_en: titleArticle, description_en: description, cover_image_url: CoverImage, related_articles: relatedArticles } = blogInfo || {};
 
@@ -36,7 +36,7 @@ export default function BlogView({ blogInfo }: any) {
           </h1>
         </div>
 
-        <Breadcrumb />
+        <Breadcrumb breadcrumbs={breadcrumbs} />
 
       </div>
 
