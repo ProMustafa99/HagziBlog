@@ -2,7 +2,6 @@ import { TagsList } from '@/interfaces/Tags';
 import React from 'react';
 
 export default function Tags({ tags }: TagsList) {
-  // Split the tags string by comma and render each tag
   const tagList = tags?.split(',');
 
   if (tagList?.length) {
