@@ -3,6 +3,7 @@ import "@/styles/globals.css";
 import type { AppProps } from "next/app";
 import Header from "./_components/Header";
 import Footer from './_components/Footer';
+import Head from 'next/head';
 
 const jsosefin = Josefin_Sans({
   subsets: ['latin'],
@@ -12,12 +13,16 @@ const jsosefin = Josefin_Sans({
 
 export default function App({ Component, pageProps }: AppProps) {
   return <>
+
+    <Head>
+      <title> Blog</title>
+    </Head>
     <Header />
 
     <main className={`bg-[#f5f7fb] h-max`} >
       <Component {...pageProps} />
     </main>
 
-    <Footer/>
+    <Footer />
   </>;
 }
