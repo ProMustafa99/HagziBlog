@@ -7,7 +7,6 @@ export async function getServerSideProps({ params }: any) {
     const blogIdNumber = Number(blogId);
 
     if (isNaN(blogIdNumber) || blogIdNumber <= 0) {
-        console.log('Invalid or negative blogId:', blogId);
         return {
             notFound: true,
         };

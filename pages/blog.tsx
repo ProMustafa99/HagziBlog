@@ -20,7 +20,6 @@ export default function blogs({ blog }: any) {
 
 
     const { searchResults, totalCount, countPerPage, currentPage ,itemsPerPage } = blog.data;
-    console.log(countPerPage);
 
     return (
         <>

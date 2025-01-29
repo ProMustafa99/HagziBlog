@@ -13,9 +13,6 @@ export default function Breadcrumb() {
     const pathSegments = pathname.split('/').filter(Boolean);
     const [crumb, setCrumb] = useState<BreadCrumb[]>([{ title: 'Home', href: '/' }]);
 
-    console.log(`pathname ${pathname}`);
-    console.log(`pathname ${pathSegments}`);
-
     useEffect(() => {
 
         const newCrumbs: BreadCrumb[] = [{ title: 'Home', href: '/' }];
