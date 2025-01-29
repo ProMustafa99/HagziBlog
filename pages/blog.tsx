@@ -19,7 +19,8 @@ export async function getServerSideProps({ query }: any) {
 export default function blogs({ blog }: any) {
 
 
-    const { searchResults, totalCount, countPerPage, currentPage ,itemsPerPage } = blog.data;
+    const { searchResults, totalCount, currentPage ,itemsPerPage } = blog.data;
+    console.log(searchResults);
 
     return (
         <>

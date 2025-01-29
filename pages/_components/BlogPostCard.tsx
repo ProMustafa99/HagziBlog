@@ -8,7 +8,7 @@ import ReadMoreButton from './ReadMoreButton';
 export default function BlogPostCard({ searchResults }: any) {
 
   const { id, title_en, description_en, cover_image_url, tags } = searchResults || {};
-
+  
   return (
 
     <div className=" bg-white rounded-lg shadow-md overflow-hidden mb-6">
