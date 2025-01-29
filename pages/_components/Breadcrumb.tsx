@@ -24,7 +24,6 @@ export default function Breadcrumb() {
             const href = `/${pathSegments.slice(0, index + 1)}`;
 
             if (index === 1) {
-
                 const blogId = Number(segment);
                 if (!isNaN(blogId)) {
 
@@ -49,20 +48,23 @@ export default function Breadcrumb() {
         }
     }, [pathname]);
 
-
     return (
         <div className='bg-white shadow-md'>
-            <nav className='container mx-auto  w-full sm:max-w-screen-md lg:max-w-screen-md xl:max-w-screen-xl flex justify-between items-center py-5'>
+            <nav className='container mx-auto w-full sm:max-w-screen-md lg:max-w-screen-md xl:max-w-screen-xl flex justify-between items-center py-5'>
                 <ul className="flex space-x-2 text-sm px-4 sm:px-10 lg:px-0">
                     {crumb.map((item, index) => (
-                        <>
-                            <li key={index} className='m-0'>
-                                <Link href={`${item.href}`} className='last:text-oceandepth last:font-bold '>
+                        <li key={index} className='m-0'>
+                            {index === crumb.length - 1 ? (
+                                <span className="last:text-oceandepth last:font-bold">
+                                    {item.title}
+                                </span>
+                            ) : (
+                                <Link href={item.href} className='last:text-oceandepth last:font-bold'>
                                     {item.title}
                                 </Link>
-                                {index < crumb.length - 1 && <span className="mx-2">/</span>}
-                            </li>
-                        </>
+                            )}
+                            {index < crumb.length - 1 && <span className="mx-2">/</span>}
+                        </li>
                     ))}
                 </ul>
             </nav>
