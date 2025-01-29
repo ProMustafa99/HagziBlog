@@ -4,11 +4,11 @@ import React, { useState } from 'react';
 
 interface PagenationConfig {
     totalCount: number,
-    countPerPage: number,
+    itemsPerPage: number,
     currentPage: number
 }
 
-export default function Pagenation({ totalCount, countPerPage, currentPage }: PagenationConfig) {
+export default function Pagenation({ totalCount, itemsPerPage, currentPage }: PagenationConfig) {
 
 
     const [page, setCurrentPage] = useState(currentPage || 1);
@@ -27,7 +27,7 @@ export default function Pagenation({ totalCount, countPerPage, currentPage }: Pa
 
     return (
         <div className="container mx-auto lg:max-w-screen-xl py-3  flex gap-2  justify-center">
-            {Array.from({ length: Math.ceil(totalCount / countPerPage) },
+            {Array.from({ length: Math.ceil(totalCount / itemsPerPage) },
                 (_, i) => i + 1).map((pageNumber) => (
                     <button
                         key={pageNumber}

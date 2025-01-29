@@ -19,9 +19,8 @@ export async function getServerSideProps({ query }: any) {
 export default function blogs({ blog }: any) {
 
 
-    const { searchResults, totalCount, countPerPage, currentPage } = blog.data;
-    console.log(blog.data);
-    const { message } = blog.message;
+    const { searchResults, totalCount, countPerPage, currentPage ,itemsPerPage } = blog.data;
+    console.log(countPerPage);
 
     return (
         <>
@@ -39,7 +38,7 @@ export default function blogs({ blog }: any) {
                     </div>
                 )}
 
-                <Pagenation totalCount={totalCount} countPerPage={countPerPage} currentPage={currentPage} />
+                <Pagenation totalCount={totalCount} itemsPerPage={itemsPerPage} currentPage={currentPage} />
             </Layout>
 
 

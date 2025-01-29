@@ -16,7 +16,7 @@ interface BlogData {
 }
 
 
-export async function getBlogs(search:string ="", page:number=1) {
+export async function getBlogs(search:string="", page:number=1) {
   
   const res = await fetch(` http://localhost:3000/blog-articles?search_term=${search}&page=${page}`);
 
