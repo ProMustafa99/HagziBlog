@@ -4,7 +4,7 @@ import { useRouter } from 'next/router';
 
 export default function SideBar() {
   const [inputValue, setInputValue] = useState("");
-
+  
   const router = useRouter();
 
   function handleSearch(e: React.FormEvent) {

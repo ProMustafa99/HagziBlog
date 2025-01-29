@@ -7,15 +7,19 @@ import NothingFound from './_components/NothingFound';
 
 export async function getServerSideProps({ query }: any) {
     const { search, page } = query;
+    
+    // Modify getBlogs to only filter search results by title/content
     const blog = await getBlogs(search, page);
+    
     if (!blog) {
-        return {
-            "notFound": true
-        }
+      return {
+        notFound: true,
+      };
     }
+    
     return { props: { blog } };
-}
-
+  }
+  
 export default function blogs({ blog }: any) {
 
 
