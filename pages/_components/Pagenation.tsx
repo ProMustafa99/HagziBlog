@@ -27,8 +27,8 @@ export default function Pagenation({ totalCount, itemsPerPage, currentPage }: Pa
         const { page } = router.query;
         const pageNumber = Number(page);
 
-        if (pageNumber > Math.ceil(totalCount / itemsPerPage)) {
-            router.push('/404');
+        if (pageNumber > totalCount/itemsPerPage) {
+            router.push('/blog');
         }
     }, [router.query]);
 
