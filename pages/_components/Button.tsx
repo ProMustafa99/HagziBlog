@@ -4,13 +4,13 @@ import React, { ReactNode } from 'react';
 interface ButtonProps {
   children: ReactNode;
   background?: string; // Optional background prop
-  href: string; // Ensures the Link points to a valid path
+  href: string; 
 }
 
-export default function Button({ children, background = 'bg-azurePulse', href }: ButtonProps) {
+export default function Button({ children, background = 'bg-azurePulse', href="#" }: ButtonProps) {
   return (
     <div className=''>
-      <Link href="#"
+      <Link href={href}
         className="
         text-blue-700
       hover:text-white border
