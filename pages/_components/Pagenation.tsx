@@ -1,3 +1,4 @@
+import { notFound } from 'next/navigation';
 import { useRouter } from 'next/router';
 import React, { useEffect, useState } from 'react';
 
@@ -13,6 +14,12 @@ export default function Pagenation({ totalCount, itemsPerPage, currentPage }: Pa
 
     const [page, setCurrentPage] = useState(currentPage || 1);
     const router = useRouter();
+
+    if (page <=0){
+        return {
+            notFound:true
+        }
+    }
 
     function handlerNextPage(pageNumber: number) {
         setCurrentPage(pageNumber);

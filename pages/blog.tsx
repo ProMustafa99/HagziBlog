@@ -11,13 +11,20 @@ interface BreadCrumb {
 }
 
 export async function getServerSideProps({ query }: any) {
+    
     const { search, page } = query;
+    
+    if (page < 1) {
+        return { notFound: true };
+    }
     
     const blog = await getBlogs(search, page);
     
     if (!blog) {
       return { notFound: true };
     }
+
+
 
     const breadcrumbs = [
         { title: "Home", href: "/" },
