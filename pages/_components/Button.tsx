@@ -11,8 +11,7 @@ export default function Button({ children, background = 'bg-azurePulse', href="#
   return (
     <div className=''>
       <Link href={href}
-        className="
-        text-blue-700
+        className=" text-blue-700
       hover:text-white border
        border-blue-700 
        hover:bg-blue-800
